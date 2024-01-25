@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title> Quasar App </q-toolbar-title>
-
+        <q-btn stretch flat label="Sub Layout" to="/sub" />
         <div>
           <q-btn
             flat
@@ -22,6 +22,11 @@
             @click="toggleDarkMode"
           />
           <!--          <q-btn flat round dense icon="dark_mode" />-->
+          <q-btn round size="sm" class="q-mr-md" to="/profile">
+            <q-avatar size="42px">
+              <img src="/icons/favicon-128x128.png" />
+            </q-avatar>
+          </q-btn>
         </div>
       </q-toolbar>
     </q-header>
@@ -88,10 +93,10 @@ const linksList = [
     to: '/flex-grid-1',
   },
   {
-    title: 'Flex Grid 2',
+    title: 'Profile',
     caption: 'quasar.dev',
     icon: 'school',
-    to: '/flex-grid-2',
+    to: '/profile',
   },
 ];
 </script>

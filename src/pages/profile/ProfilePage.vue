@@ -45,29 +45,50 @@
         </div>
       </section>
       <section>
-        <div class="row q-col-gutter-md">
-          <div
-            v-for="i in 18"
-            :key="i"
-            class="col-12 col-sm-6 col-md-4 con-lg-2"
-          >
-            <q-card class="my-card">
-              <q-img ratio="1" src="https://cdn.quasar.dev/img/parallax2.jpg">
-                <div
-                  class="absolute-bottom text-subtitle2 flex flex-center full-height"
-                >
-                  Title
-                </div>
-              </q-img>
-            </q-card>
-          </div>
-        </div>
+        <q-tabs
+          class="q-mb-lg"
+          v-model="tab"
+          inline-label
+          switch-indicator
+          indicator-color="primary"
+        >
+          <!--          <q-tab name="mails" icon="mail" label="게시글" />
+          <q-tab name="alarms" icon="alarm" label="저장됨" />
+          <q-tab name="movies" icon="movie" label="테크됨" />-->
+          <q-route-tab
+            :ripple="false"
+            icon="edit"
+            to="/profile"
+            label="게시글"
+            exact
+          />
+          <q-route-tab
+            :ripple="false"
+            icon="bookmark_border"
+            to="/profile/saved"
+            label="저장됨"
+            exact
+          />
+          <q-route-tab
+            :ripple="false"
+            icon="local_offer"
+            to="/profile/tagged"
+            label="태그됨"
+            exact
+          />
+        </q-tabs>
+        <router-view></router-view>
+        <!--        -->
       </section>
     </q-page>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const tab = ref('mails');
+</script>
 
 <style lang="scss" scoped>
 .q-page {

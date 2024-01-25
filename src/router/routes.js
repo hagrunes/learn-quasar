@@ -9,11 +9,37 @@ const routes = [
       { path: 'spacing', component: () => import('pages/Spacing.vue') },
       { path: 'breakpoints', component: () => import('pages/Breakpoints.vue') },
       { path: 'flex-grid-1', component: () => import('pages/FlexGird1.vue') },
-      { path: 'flex-grid-2', component: () => import('pages/FlexGird2.vue') },
+      {
+        path: 'profile',
+        component: () => import('pages/profile/ProfilePage.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('pages/profile/ProfilePosts.vue'),
+          },
+          {
+            path: 'saved',
+            component: () => import('pages/profile/ProfileSaved.vue'),
+          },
+          {
+            path: 'tagged',
+            component: () => import('pages/profile/ProfileTagged.vue'),
+          },
+        ],
+      },
       {
         path: 'classes-variables',
         component: () => import('pages/Classes-variables.vue'),
       },
+    ],
+  },
+  {
+    path: '/sub',
+    component: () => import('layouts/SubLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/sub/IndexPage.vue') },
+      { path: 'sub-page-1', component: () => import('pages/sub/SubPage1.vue') },
+      { path: 'sub-page-2', component: () => import('pages/sub/SubPage2.vue') },
     ],
   },
 
