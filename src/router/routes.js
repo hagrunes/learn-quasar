@@ -28,6 +28,10 @@ const routes = [
         ],
       },
       {
+        path: 'form-handling',
+        component: () => import('pages/Form-handling.vue'),
+      },
+      {
         path: 'classes-variables',
         component: () => import('pages/Classes-variables.vue'),
       },
@@ -42,7 +46,14 @@ const routes = [
       { path: 'sub-page-2', component: () => import('pages/sub/SubPage2.vue') },
     ],
   },
-
+  {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      { path: 'sign-in', component: () => import('pages/auth/SignIn.vue') },
+      { path: 'sign-up', component: () => import('pages/auth/SignUp.vue') },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

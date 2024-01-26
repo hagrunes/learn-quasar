@@ -22,10 +22,22 @@
             @click="toggleDarkMode"
           />
           <!--          <q-btn flat round dense icon="dark_mode" />-->
-          <q-btn round size="sm" class="q-mr-md" to="/profile">
+          <q-btn round size="sm" class="q-mr-md">
             <q-avatar size="42px">
               <img src="/icons/favicon-128x128.png" />
             </q-avatar>
+            <q-menu :offset="[0, 10]">
+              <q-list style="min-width: 100px">
+                <q-separator />
+                <q-item clickable v-close-popup to="/profile">
+                  <q-item-section>프로필</q-item-section>
+                </q-item>
+                <q-separator />
+                <q-item clickable v-close-popup to="/auth/sign-in">
+                  <q-item-section>로그아웃</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
           </q-btn>
         </div>
       </q-toolbar>
@@ -93,10 +105,10 @@ const linksList = [
     to: '/flex-grid-1',
   },
   {
-    title: 'Profile',
+    title: 'Form Handling',
     caption: 'quasar.dev',
     icon: 'school',
-    to: '/profile',
+    to: '/form-handling',
   },
 ];
 </script>
