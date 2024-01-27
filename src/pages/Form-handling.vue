@@ -85,6 +85,8 @@
 </template>
 <script setup>
 import { ref } from 'vue';
+import { useQuasar } from 'quasar';
+const $q = useQuasar();
 const myForm = ref(null);
 const form = ref({
   title: '',
@@ -119,10 +121,14 @@ const reset = () => {
 
 const onSubmit = () => {
   if (form.value.accept !== true) {
-    alert('동의ㄱ');
-  } else {
-    alert('성공');
+    alert('동의해줘라');
+    return;
   }
+  $q.loading.show({});
+  setTimeout(() => {
+    $q.loading.hide();
+    alert('성공');
+  }, 3000);
 };
 const onReset = () => {
   form.value.title = '';

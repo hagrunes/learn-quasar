@@ -32,6 +32,14 @@ const routes = [
         component: () => import('pages/Form-handling.vue'),
       },
       {
+        path: 'quasar-utils',
+        component: () => import('pages/quasar-utils.vue'),
+      },
+      {
+        path: 'quasar-language-pack',
+        component: () => import('pages/quasar-language-pack.vue'),
+      },
+      {
         path: 'classes-variables',
         component: () => import('pages/Classes-variables.vue'),
       },

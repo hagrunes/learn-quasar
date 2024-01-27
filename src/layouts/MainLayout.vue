@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title> {{ $t('productName') }} </q-toolbar-title>
         <q-btn stretch flat label="Sub Layout" to="/sub" />
         <div>
           <q-btn
@@ -110,6 +110,18 @@ const linksList = [
     icon: 'school',
     to: '/form-handling',
   },
+  {
+    title: 'Quasar Utils',
+    caption: 'quasar.dev',
+    icon: 'school',
+    to: '/quasar-utils',
+  },
+  {
+    title: 'Quasar Language Pack',
+    caption: 'quasar.dev',
+    icon: 'school',
+    to: '/quasar-language-pack',
+  },
 ];
 </script>
 
@@ -117,6 +129,8 @@ const linksList = [
 import { computed, defineComponent, ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
 import { useQuasar } from 'quasar';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 const $q = useQuasar();
 
 const leftDrawerOpen = ref(false);
