@@ -62,6 +62,13 @@ const routes = [
       { path: 'sign-up', component: () => import('pages/auth/SignUp.vue') },
     ],
   },
+  {
+    path: '/youtube',
+    component: () => import('layouts/youtube/index.vue'),
+    children: [
+      { path: '', component: () => import('pages/youtube/indexPage.vue') },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
